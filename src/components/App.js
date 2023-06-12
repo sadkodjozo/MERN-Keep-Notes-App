@@ -6,7 +6,7 @@ import Note from './Note';
 import CreateArea from './CreateArea';
 
 
-const url = "http://localhost:3001";
+const url = "https://mernkeep-notes-api.onrender.com";
 
 function App() {
     const [notes, setNotes] = useState([]);
@@ -23,7 +23,7 @@ function App() {
 
 
     const addNote = async (newNote) => {
-        await Axios.post("http://localhost:3001/add", newNote)
+        await Axios.post(url + "/add", newNote)
         .then((res) => {
             const data = res.data;
             console.log(data);
